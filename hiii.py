@@ -2994,8 +2994,5 @@ print(a[::])
 
 
 
-
-
-
 print("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh")
 exit()
