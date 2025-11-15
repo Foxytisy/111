@@ -5,6 +5,7 @@ import time
 func = input("ievadi funkciju: y=")
 noValueCount = 0
 noValueMaxCount = 500
+yold = 0
 
 #Satīra to funkcij (faktoriāļiem vajag izdomāt specgadījumu)
 trans = {"^": "**", "sin": "math.sin", "cos": "math.cos", "tg": "math.tan", "sqrt": "math.sqrt", "log": "math.log"}
@@ -42,46 +43,61 @@ for ind, i in enumerate(func):
 #Izveido to visu logu
 root = tk.Tk()
 root.title("yes")
-root.geometry("500x500")
+root.geometry("500x600")
 canvas = tk.Canvas(root, width=500, height=500, bg="white")
-canvas.pack(anchor=tk.CENTER, expand=True)
+canvas.pack(anchor=tk.N, expand=True)
+fieldcanvas = tk.Canvas(root, width=500, height=100)
+fieldcanvas.pack(anchor=tk.S, expand=True)
+
+functionEntry = tk.Entry(fieldcanvas)
+functionEntry.pack(pady=20)
 
 #Koordinātu plaknes līnijas, tho vajadzētu pārtaisīt
 canvas.create_line(250, 0, 250, 500, fill="black")
 canvas.create_line(0, 250, 500, 250, fill="black")
 
 #Pats tas zīmētājs
-for i in range(15):
+for i in range(50):
     for x in range(-250, 251):
         try:
            y=eval(func, {"math": math, "x": x}, {"__builtins__": None})
            y=(-y)
-           canvas.create_oval(x+249, y+249, x+252, y+252, fill="red", outline="red")
+           canvas.create_oval(x+249, y+249, x+252, y+252, fill="red", outline="red", tags="red")
+           canvas.create_line(x+250, yold+250, x+251, y+250, fill="red", width="2", tags="red")
            print(-y)
+           yold=y
            root.update()
            noValueCount=0
            time.sleep(0.001)
-        except:
+        except Exception as e:
             pass
+            i=+1
             if noValueCount > noValueMaxCount:
-             print("Error! 01")
+             print("Error!", e)
              print(func)
              quit()
     time.sleep(0.1)
+    canvas.delete("blue")
+    yold = 0
     for x in range(-250, 251):
         try:
            y=eval(func, {"math": math, "x": x}, {"__builtins__": None})
            y=(-y)
-           canvas.create_oval(x+249, y+249, x+252, y+252, fill="blue", outline="blue")
+           canvas.create_oval(x+249, y+249, x+252, y+252, fill="blue", outline="blue", tags="blue")
+           canvas.create_line(x+250, yold+250, x+251, y+250, fill="blue", width="2", tags="blue")
            print(-y)
+           yold=y
            root.update()
+           noValueCount=0
            time.sleep(0.001)
-        except:
-           pass
-           if noValueCount > noValueMaxCount:
-             print("Error! 01")
+        except Exception as e:
+            pass
+            if noValueCount > noValueMaxCount:
+             print("Error! ", e)
              print(func)
              quit()
     time.sleep(0.1)
+    canvas.delete("red")
+    yold = 0
 #idk
 root.mainloop()
