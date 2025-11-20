@@ -7,7 +7,7 @@ noValueCount = 0
 noValueMaxCount = 500
 yold = 0
 
-#Satīra to funkcij (faktoriāļiem vajag izdomāt specgadījumu)
+#Satīra to funkcij (faktoriāļiem vajag izdomāt specgadījumu) 
 trans = {"^": "**", "sin": "math.sin", "cos": "math.cos", "tg": "math.tan", "sqrt": "math.sqrt", "log": "math.log"}
 for i in trans:
     func = func.replace(i, trans[i])
