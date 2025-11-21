@@ -58,7 +58,8 @@ canvas.create_line(0, 250, 500, 250, fill="black")
 
 #Pats tas zīmētājs
 for i in range(50):
-    for x in range(-250, 251):
+    for x in range(-500, 501):
+        x= x / 2
         try:
            y=eval(func, {"math": math, "x": x}, {"__builtins__": None})
            y=(-y)
@@ -79,7 +80,8 @@ for i in range(50):
     time.sleep(0.1)
     canvas.delete("blue")
     yold = 0
-    for x in range(-250, 251):
+    for x in range(-500, 501):
+        x=x/2
         try:
            y=eval(func, {"math": math, "x": x}, {"__builtins__": None})
            y=(-y)
