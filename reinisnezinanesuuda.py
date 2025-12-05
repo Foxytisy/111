@@ -18,5 +18,5 @@ for iii in range (0,20):
 for keyifesnuwfesonuwfesonuwfeoni, valueefnuifenuiwfeuiwfeui in list(vardnica2.items()):
     if valueefnuifenuiwfeuiwfeui % 2 == 0:
         vardnica2.pop(keyifesnuwfesonuwfesonuwfeoni)
-
+#mim
 print(vardnica2)
