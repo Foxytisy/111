@@ -1,7 +1,7 @@
 import random
 
 # 1 Uzd
-"""
+
 def random_dict():
   dict1 = {}
   for iii in range(0,100):
@@ -106,17 +106,17 @@ for i in range(cik):
   vardnica.pop(key)
 
 print(vardnica)
-"""
+
 # 5 Uzd
 
-def compareText(text1: str, text2: str) -> str:
-    if len(text1) != len(text2):
+def compareText(teksts1: str, teksts2: str) -> str:
+    if len(teksts1) != len(teksts2):
         return "nebūs :( errorr)"
     
     result = ""
-    for i in range(len(text1)):
-        if text1[i] != text2[i]:
-            result += text2[i]
+    for i in range(len(teksts1)):
+        if teksts1[i] != teksts2[i]:
+            result += teksts2[i]
     
     return result
 
