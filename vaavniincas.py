@@ -1,4 +1,3 @@
-"""
 vardnica = {
     0:"viens",
     2:"divi",
@@ -26,11 +25,9 @@ vardnica.pop("neeksistējoša atslēga")
 vardnica.pop("jauna atsl1")
 del vardnica["jauna atsl2"]
 print(vardnica)
-"""
 
 
 #I UZD
-"""
 import random
 vardnica = {}
 for iii in range(0, 20):
@@ -49,10 +46,9 @@ for iii in list(vardnica.keys()):
     if iii % 2 == 0:
         vardnica.pop(iii)
 print(vardnica)
-"""
+
 
 #II UZD         Jālabo, jāieliek atb vārdnīca
-"""
 import random
 dict1 = {}
 for i in range(0, 20):
@@ -64,7 +60,6 @@ for i in list(dict1.keys()):
     if dict1[i] < 501 :
         dict1.pop(i)
 print(dict1)
-"""
 
 
 #III %UZD
