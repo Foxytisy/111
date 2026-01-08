@@ -1,4 +1,5 @@
 import random
+import math
 
 vardnica = {}
 for iii in range (0,20):
@@ -44,4 +45,6 @@ for key, sk in list(vardn.items()):
         else:
             print("Neatpazists romiešu whatever")
     
+    
+
 print(vardn)
