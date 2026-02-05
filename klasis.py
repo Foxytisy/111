@@ -4,7 +4,7 @@ class Austinas:
 
     ieslegts: bool
     savienots: bool
-    skalums: float
+    skalums: float = 0.0
     atskano: bool
     dziesma: str
 
@@ -19,7 +19,7 @@ class Austinas:
     def elektriba(self):
         if self.ieslegts == False:
             self.ieslegts = True
-            print("yo bluetotz devaic is redi to pear")
+            print("yo bluetotz devaic is redi to pear!")
         else:
             self.ieslegts = False
             print("bai baiii!")
@@ -35,7 +35,7 @@ class Austinas:
 
     def skalums(self, cik):
         if self.ieslegts == True:
-            self.skalums =+ cik
+            self.skalums = cik
             print("yo hedphoner is ", self.skalums, "dB lautness")
         else:
             print("Austinas ir izslegtas!")
@@ -50,6 +50,7 @@ class Austinas:
 
     def __str__(self):
         print(self.brends, self.modelis, self.ieslegts, self.savienots, self.skalums, self.atskano, self.dziesma)
+        return f"{self.brends} {self.modelis} - Skaļums whatever"
 
 
 labasAusis = Austinas("volkswagen", "HB-495BT 392000 5000xTX pT BT")
