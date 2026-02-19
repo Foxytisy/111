@@ -9,20 +9,23 @@ class Prece:
         self.vertiba = vertiba
 
 class Grozs:
-    preces = []
+    preces: list[Prece]
 
-    def pievienotPreci(self, Prece):
+    def __init__(self):
+        self.preces = []
+
+    def pievienotPreci(self, Prece :Prece):
         self.preces.append(Prece)
         print("Pievienots!")
 
-    def nomentPreci(self, Prece):
+    def nomentPreci(self, Prece :Prece):
         self.preces.remove(Prece)
         print("Noņemts!")
     def vertiba(self):
         vertiba = 0
-        for i in self.preces:
-            vertiba += i
-        print(self.vertiba)
+        for prece in self.preces:
+            vertiba += prece.vertiba
+        return(self.vertiba)
             
 
 
@@ -33,6 +36,37 @@ rimiAboli = Prece("Rimi baigie aboli", 10, 5000.0)
 grozins.pievienotPreci(rimiSaldejums)
 grozins.pievienotPreci(rimiAboli)
 grozins.nomentPreci(rimiAboli)
-grozins.vertiba()
+print(grozins.vertiba())
 
 
+
+class bankasKonts:
+    nosaukums: str
+    daudzums: float
+
+    def __init__(self, nosaukums, sakumaDaudzums = 0):
+        self.nosaukums = nosaukums
+        self.daudzums = sakumaDaudzums
+
+    def ieskaitit(self, summa):
+        self.daudzums += summa
+    def iznemt(self, summa):
+        if self.daudzums > 50:
+            self.daudzums -= summa
+        else:
+            print("nabags")
+
+class krajkonts(bankasKonts):
+    def __init__(self, nosaukums, sakumaDaudzums=0):
+        super().__init__(nosaukums, sakumaDaudzums)
+    def iznemt(self, summa):
+        if self.daudzums > 50:
+            self.daudzums -= summa + (summa*0.1)
+            print(self.daudzums)
+        else:
+            print("nabags")
+    
+
+krajkontss = krajkonts("labaiis", 100)
+
+krajkontss.iznemt(10)
