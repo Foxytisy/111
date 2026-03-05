@@ -1,0 +1,32 @@
+
+3. Uzdevums (Saistītas klases) (2p grafiks + 5p pirmkods)
+
+Ir doti sekojoši dati:
+
+(Gēns)
+Simbols 	Nosaukums 					Suga
+ADRA1D		adrenoceptor alpha 1D				Homo sapiens
+RGS11		regulator of G protein signaling 11		Homo sapiens
+Wdr11		WD repeat domain 11				Mus musculus
+Ralgapa1	Ral GTPase activating protein, alpha subunit 1	Mus musculus
+
+(Gēnu tīkls)
+Identifikators  Nosaukums					Gēni			Suga
+R-HSA-162582	Signal Transduction				ADRA1D,RGS11		Homo Sapiens
+R-MMU-194315	Signaling by Rho GTPases			Wdr11,Ralgapa1		Mus musculus
+
+3.1. Izveidojat klašu diagrammu un klases pirmkodu, kas atbilst šīm tabulām
+3.1.1. Laukam "Gēni" ir jābūt masīvam, kas satur objektus ar otrās tabulas datiem, vai atsaucēm uz tiem.
+3.2. Izveidojat klasei "gēnu tīkls" funkciju, kas ļauj pievienot jaunus ierakstus.
+3.3. Izveidojat funkciju iekš "gēnu tīkla" klases, kas izvadot objektu (i.e. print(tikls)) izvada visus lietotāja ierakstus sekojošā formātā - "<Tīkla Identifikators>: <Gēna Simbols>".
+3.4. Izveidojat objektus kas satur dotās vērtības, un izsaucat izvades funkcijas tīklam "R-MMU-194315".
+
+4. Uzdevums (Mantošana) - 5p
+
+4.1. Izveidojat abstraktu bāzes klasi "Ziņa". Šai klasei jāsatur metodes "sūtīt", kā arī mainīgo "saturs".
+4.2. Izveidojat apakšklases, un izmainat inicializatora funkciju lai pieņem vajadzīgo informāciju -
+4.2.1. E-pasts - pievienojat mainīgos "saņēmēja_adrese" un "sūtītāja_adrese". Funkcija "sūtīt" pieņem e-pasta adresi un izvada "ziņa nosūtīta no {saņēmēja_adrese} uz {sūtītāja_adrese}". Izvadot objektu, izvadei jābūt sekojošā formātā - "From: {sūtītāja_adrese} To: {saņēmēja_adrese} {saturs}"
+4.2.2. SMS - pievienojat mainīgos "saņēmēja_numurs" un "sūtītāja_numurs". Funkcija "sūtīt" pieņem tālruņa numuru un izvada "SMS nosūtīts uz {saņēmēja_numurs}". Izvadot objektu jāizvada tikai ziņas saturs.
+4.2.3. Notifikācija - pievienojat mainīgos "prog_nosaukums" un "klienta_identifikators". Pievienot funkciju "saņemt", kas izvada tekstu sekojošā formātā - "{prog_nosaukums}: {saturs}".
+4.3. Izveidojat objektus šīm klasēm. Datus varat izdomāt paši.
+4.4. Izsaucat visas funkcijas šiem objektiem.
