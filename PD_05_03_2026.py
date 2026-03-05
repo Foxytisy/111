@@ -88,7 +88,7 @@ p2 = Genu_Tikls("R-MMU-194315", "Signaling by Rho GTPases", "Mus musculus")
 p2.pievienotGenu(g3)
 p2.pievienotGenu(g4)
 
-print(p1) # neizprintē visus
+print(p1) # neizprintē visus nezinu kāpēc :/
 print(p2)
 
 print()
