@@ -71,7 +71,7 @@ class Gens():
         self.Suga = suga
         
     def __str__(self):
-        pass
+        return self.Simbols
         
     
  #Gēniņi
@@ -88,5 +88,73 @@ p2 = Genu_Tikls("R-MMU-194315", "Signaling by Rho GTPases", "Mus musculus")
 p2.pievienotGenu(g3)
 p2.pievienotGenu(g4)
 
-print(p1)
+print(p1) # neizprintē visus
+print(p2)
+
+print()
+
+# 4. Uzd
+
+class zina():
+    saturs: str
     
+    def __init__(self, saturs):
+        self.saturs = saturs
+        
+    def sutit():
+        pass
+    
+class Epasts(zina):
+    sanemeja_adrese: str
+    sutitaja_adrese: str
+    
+    def __init__(self, saturs, Sutitajs):
+        super().__init__(saturs)
+        self.sutitaja_adrese = Sutitajs
+    
+    def sutit(self, Sanemejs):
+        self.sanemeja_adrese = Sanemejs
+        print(f"Ziņa nosūtītā no {self.sutitaja_adrese} uz {Sanemejs}")
+        
+    def __str__(self):
+        return f"From: {self.sutitaja_adrese} To: {self.sanemeja_adrese} {self.saturs}"
+    
+class SMS(zina):
+    sanemeja_numurs: int
+    sutitaja_numurs: int
+    
+    def __init__(self, saturs, Sutitajs):
+        super().__init__(saturs)
+        self.sutitaja_numurs = Sutitajs
+    
+    def sutit(self, Sanemejs):
+        self.sanemeja_numurs = Sanemejs
+        print(f"SMS nosūtītā no {self.sutitaja_numurs} uz {Sanemejs}")
+        
+    def __str__(self):
+        return self.saturs
+    
+
+class Notifikacija(zina):
+    prog_nosaukums: str
+    klienta_identifikators: str
+    
+    def __init__(self, saturs, nosaukums, ide):
+        super().__init__(saturs)
+        self.prog_nosaukums = nosaukums
+        self.klienta_identifikators = ide
+            
+    def sanemt(self):
+        print(f"{self.prog_nosaukums}: {self.saturs}")
+    
+
+e1 = Epasts("halloo!", "es")
+e1.sutit("tu")
+print(e1)
+
+s1 = SMS("hALLU!", "es")
+s1.sutit("tu!")
+print(s1)
+
+n1 = Notifikacija("yahoo!!", "Block Blast", "123")
+n1.sanemt()
