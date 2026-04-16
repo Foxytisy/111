@@ -1,3 +1,5 @@
+import os
+
 with open ("loremipsum.txt", "r", encoding="UTF-8") as loremipsumtext:
     print("Teksta garums ir ", len(loremipsumtext.readline()))
     
@@ -25,3 +27,39 @@ with open ("ini.txt", "r", encoding="ASCII") as darbibas:
                 C3 = A*B
                 
 print(C1, C2, C3)
+
+#print(os.path.isdir(".\\ignored")) pārbauda vai eksistē
+#if not os.path.isdir(".\\ignored"):
+#   os.mkdir("ignored")
+#   os.makedirs("ignored/ignore232/igigg") izveido vairākas mapes
+#else
+#   print("mau") 
+
+#for file in os.listdir("ignored"):
+#    print(f"Dzēšam {file}")
+#    os.remove("ignored\\"+file) #Faila dzēšana
+    
+#os.rmdir("ignored") # izdzēš mapi
+
+import shutil
+#shutil.rmtree("ignored")
+
+if not os.path.exists("mape"):
+    os.mkdir("mape")
+for iii in range(1,101):
+    with open(f"mape\\{iii}", "w", encoding="UTF-8"):
+        pass
+    
+faili = os.listdir("mape")
+for iii in range(0, len(faili), 3):
+    os.remove(f"mape\\{faili(iii)}")
+    
+import random
+faili = os.listdir("mape")
+fails = random.choice(faili)
+b = random.randint(0, 100)
+with open(f"mape\\{fails}", "w", encoding="UTF-8") as failins:
+    fails.write(str(b))
+ievad = input(f"Ievadiet skaitli no faila {fails}")
+if ievad == b:
+    print("ok!!!")
